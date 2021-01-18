@@ -26,11 +26,10 @@ Module.register("MMM-CountDown",{
 		var wrapper = document.createElement("div");
 
 		var timeWrapper = document.createElement("div");
-		var textWrapper = document.createElement("div");
+		// var textWrapper = document.createElement("div");
 
 		textWrapper.className = "align-left week dimmed medium";
-		timeWrapper.className = "time bright xlarge light";
-		textWrapper.innerHTML=this.config.event;
+		// timeWrapper.className = "time bright xlarge light";
 
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
@@ -52,10 +51,10 @@ Module.register("MMM-CountDown",{
 		if(this.config.showMinutes == true) mins = diffMinutes + this.config.minutesLabel;
 		if(this.config.showSeconds == true) secs = diffSeconds + this.config.secondsLabel;
 
-		timeWrapper.innerHTML = days + hrs + mins + secs;
-
+		// timeWrapper.innerHTML = days + hrs + mins + secs;
+		textWrapper.innerHTML=this.config.event + days + hrs + mins + secs;
 		wrapper.appendChild(textWrapper);
-		wrapper.appendChild(timeWrapper);
+		// wrapper.appendChild(timeWrapper);
 
 		return wrapper;
 	}
